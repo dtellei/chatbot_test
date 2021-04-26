@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
 
 
@@ -59,14 +59,14 @@ export default function App({ route, navigation }) {
 
   return (
     <GiftedChat
-    messages={messages}
-    onSend={messages => onSend(messages)}
-    user={{
-      _id: 1,
-    }}
-  />
-    
+      messages={messages}
+      onSend={messages => onSend(messages)}
+      user={{
+        _id: 1,
+      }}
+    />
   );
+  
 }
 
 const styles = StyleSheet.create({
