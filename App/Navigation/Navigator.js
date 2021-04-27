@@ -1,12 +1,45 @@
 import * as React from 'react';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
+
 import Chat from '../Screens/Chat';
-import Symptoms from '../Screens/Symptoms'; 
+import Symptoms from '../Screens/Symptoms';
+import SymptomDetails from '../Screens/SymptomDetails'; 
 import Support from '../Screens/Support';
 import Journal from '../Screens/Journal'
 
+const ChatStack = createStackNavigator();
+
+function ChatStackScreen() {
+  return (
+    <ChatStack.Navigator>
+      <ChatStack.Screen name="Chat" component={Chat} />
+    </ChatStack.Navigator>
+  );
+}
+
+const SymptomStack = createStackNavigator();
+
+function SymptomsStackScreen() {
+  return (
+    <SymptomStack.Navigator>
+      <SymptomStack.Screen name="Symptoms" component={Symptoms} />
+      <SymptomStack.Screen name="Details" component={SymptomDetails} />
+    </SymptomStack.Navigator>
+  );
+}
+
+const SupportStack = createStackNavigator();
+
+function SupportStackScreen() {
+  return (
+    <SupportStack.Navigator>
+      <SupportStack.Screen name="Support" component={Support} />
+    </SupportStack.Navigator>
+  );
+}
 
 const Tab = createBottomTabNavigator();
 
